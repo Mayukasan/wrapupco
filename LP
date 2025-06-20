@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北米市場進出サポート</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        .wrap {
+            width: 90%;
+            max-width: 1200px;
+        }
+        h2 {
+            color: #00adce;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        strong {
+            font-weight: bold;
+            color: #00adce;
+        }
+        ol {
+            margin: 0; /* リストの左余白を削除 */
+            padding: 0;
+            display: flex; /* フレックスボックスを使用 */
+            flex-wrap: wrap; /* 折り返しを有効に */
+        }
+        ol li {
+            display: flex;
+            flex-direction: column; /* アイコンの下にテキストを配置 */
+            align-items: center; /* アイコンとテキストを中央に配置 */
+            margin: 10px; /* アイテム間の余白 */
+            flex: 1 1 calc(33% - 20px); /* 各アイテムを3列に配置 */
+            min-width: 150px; /* 最小幅を設定 */
+            box-sizing: border-box; /* ボックスモデルを設定 */
+            text-align: center; /* テキストを中央に配置 */
+        }
+        ol li img {
+            margin-bottom: 5px; /* アイコンの下に余白を追加 */
+            width: 30px; /* アイコンサイズを調整 */
+            height: auto;
+        }
+        .content img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #ff9900;
+            border: 2px solid #ff9900;
+            border-radius: 5px;
+            padding: 15px 30px;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #fff;
+            color: #ff9900;
+            border: 2px solid #ff9900;
+        }
+        .japanese-link {
+            font-size: 16px;
+            text-align: center;
+            margin-top: 40px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .japanese-link a {
+            color: #00adce;
+            text-decoration: none;
+        }
+        .japanese-link a:hover {
+            text-decoration: underline;
+        }
+        .testimonial {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-left: 5px solid #00adce;
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .highlight {
+            color: #00adce;
+        }
+        .section-background {
+            background-color: #f5f5f5;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        /* PCデザイン */
+        @media screen and (min-width: 769px) {
+            ol li {
+                flex-direction: row; /* アイコンを左、テキストを右に配置 */
+                align-items: center; /* 中央揃え */
+                text-align: left; /* 左揃え */
+            }
+            ol li img {
+                margin-bottom: 0; /* アイコン下の余白を削除 */
+                margin-right: 10px; /* アイコンとテキストの間のスペース */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section class="content">
+            <h2>Global Market Expansion Support – Your Gateway to Success in North America</h2>
+            
+            <p><strong>WRAPUP CONSULTING INC.</strong>, headquartered in BC, Canada, specializes in providing comprehensive consulting services to support businesses in expanding their sales channels in the highly competitive markets of the United States and Canada. From initial market research to securing local partnerships and expanding online sales via platforms like Amazon, we assist your company every step of the way.</p>
+            <p>With our extensive expertise, we ensure a smooth and strategic entry into the U.S. and Canadian markets.</p>
+
+            <div class="section-background">
+                <h3 class="highlight">Key Features of Our Service:</h3>
+                <ol>
+                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.04.31-A-simple-clean-icon-for-Market-Research-designed-in-a-flat-modern-style.-The-icon-should-feature-a-magnifying-glass-with-a-bar-chart-inside-the-l-1.webp" alt="Market Research Icon"><strong>Customized Market Research</strong> – In-depth insights into your target market, helping you identify growth opportunities and competitive advantages.</li>
+                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.00-A-simple-clean-icon-for-Strategic-Partnership-designed-in-a-flat-modern-style.-The-icon-should-feature-two-hands-shaking-symbolizing-collaborati.webp" alt="Partnership Icon"><strong>Strategic Partnership Development</strong> – We assist in finding reliable local partners and agents for smooth market entry.</li>
+                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.02-A-simple-clean-icon-for-Regulatory-Compliance-designed-in-a-flat-modern-style.-The-icon-should-feature-a-checkmark-or-a-document-with-a-check-sy.webp" alt="Compliance Icon"><strong>Regulatory Compliance Support</strong> – Ensuring your products meet all U.S. and Canadian regulatory requirements.</li>
+                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.04-A-simple-clean-icon-for-Online-Sales-Platform-Optimization-designed-in-a-flat-modern-style.-The-icon-should-feature-a-shopping-cart-and-upward-ar.webp" alt="Online Sales Icon"><strong>Online Sales Platform Optimization</strong> – Supporting your expansion through Amazon and Shopify, optimizing product listings, sales strategies, and logistics.</li>
+                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.05-A-simple-clean-icon-for-Exhibition-and-Event-Support-designed-in-a-flat-modern-style.-The-icon-should-feature-a-podium-or-stage-with-a-presentati.webp" alt="Event Icon"><strong>Exhibition and Event Support</strong> – Helping you effectively participate in North American trade shows and events, building your brand and network.</li>
+                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.06-A-simple-clean-icon-for-Ongoing-Support-and-Monitoring-designed-in-a-flat-modern-style.-The-icon-should-feature-a-gear-or-cycle-symbol-represent.webp" alt="Monitoring Icon"><strong>Ongoing Support and Monitoring</strong> – Continuous post-launch support and monitoring to ensure long-term growth.</li>
+                </ol>
+            </div>
+
+            <div class="section-background">
+                <h3 class="highlight">Our Proven Track Record</h3>
+                <p>Through our support, companies in various industries have achieved success in the North American market. We have helped businesses in food, electronics, and apparel industries to expand their market presence, securing a strong foothold in the U.S. and Canada.</p>
+                <p>Additionally, we have assisted numerous companies in significantly boosting their online sales through platforms like Amazon and Shopify. For more detailed examples of our success, feel free to contact us.</p>
+            </div>
+
+            <div class="section-background">
+                <h3 class="highlight">Client Testimonials</h3>
+                <div class="testimonial">
+                    <p>"Thanks to WRAPUP CONSULTING, our products successfully entered the U.S. market. From optimizing our online sales to ensuring regulatory compliance, they are a trustworthy partner." - Food Industry Client</p>
+                </div>
+                <div class="testimonial">
+                    <p>"The market research and partnership development support were outstanding. Our products penetrated the North American market smoothly, leading to significant sales growth." - Electronics Industry Client</p>
+                </div>
+                <div class="testimonial">
+                    <p>"WRAPUP CONSULTING helped us participate in key trade shows, enabling us to connect with many buyers. We now feel confident in our North American market expansion." - Apparel Industry Client</p>
+                </div>
+            </div>
+
+<div class="section_blue company center">
+      <div class="wrap">
+     <h2 class="txt-lg bottom-lg">Company Profile</h2> 
+        <table class="company__data">
+          <tbody>
+          <tr>
+               <th>Company Name</th>
+            <td>WRAPUP CONSULTING INC.<br class="sp"></td>
+          </tr>
+          <tr>
+               <th>CEO</th>
+            <td>Suguru Abe</td>
+          </tr>
+          <tr>
+               <th>Address</th> 
+                <td>#050 - 3012 Murray St.,Port Moody, BC, Canada</td> 
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+            <a href="#contact" class="btn">Contact Us</a>
+
+            <div class="japanese-link">
+                <p><strong>For details in Japanese:</strong> <a href="https://wrapup.co.jp/northamericajp/">北米市場進出支援サービス（日本語ページ）</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
