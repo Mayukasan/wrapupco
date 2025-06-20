@@ -1,196 +1,749 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北米市場進出サポート</title>
+    <title>WrapUp - Transform Your Financial Operations with AI-Powered Accounting</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-            background-color: #fff;
+            font-family: 'Inter', sans-serif;
             color: #333;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-        .wrap {
-            width: 90%;
-            max-width: 1200px;
-        }
-        h2 {
-            color: #00adce;
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-        h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        strong {
-            font-weight: bold;
-            color: #00adce;
-        }
-        ol {
-            margin: 0; /* リストの左余白を削除 */
-            padding: 0;
-            display: flex; /* フレックスボックスを使用 */
-            flex-wrap: wrap; /* 折り返しを有効に */
-        }
-        ol li {
-            display: flex;
-            flex-direction: column; /* アイコンの下にテキストを配置 */
-            align-items: center; /* アイコンとテキストを中央に配置 */
-            margin: 10px; /* アイテム間の余白 */
-            flex: 1 1 calc(33% - 20px); /* 各アイテムを3列に配置 */
-            min-width: 150px; /* 最小幅を設定 */
-            box-sizing: border-box; /* ボックスモデルを設定 */
-            text-align: center; /* テキストを中央に配置 */
-        }
-        ol li img {
-            margin-bottom: 5px; /* アイコンの下に余白を追加 */
-            width: 30px; /* アイコンサイズを調整 */
-            height: auto;
-        }
-        .content img {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
-        .btn {
-            background-color: #ff9900;
-            border: 2px solid #ff9900;
-            border-radius: 5px;
-            padding: 15px 30px;
-            color: #fff;
-            font-size: 18px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #fff;
-            color: #ff9900;
-            border: 2px solid #ff9900;
-        }
-        .japanese-link {
-            font-size: 16px;
-            text-align: center;
-            margin-top: 40px;
-            background-color: #f5f5f5;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .japanese-link a {
-            color: #00adce;
-            text-decoration: none;
-        }
-        .japanese-link a:hover {
-            text-decoration: underline;
-        }
-        .testimonial {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-left: 5px solid #00adce;
-            margin-bottom: 20px;
-        }
-        .testimonial p {
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-        .highlight {
-            color: #00adce;
-        }
-        .section-background {
-            background-color: #f5f5f5;
-            padding: 40px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            line-height: 1.6;
         }
         
-        /* PCデザイン */
-        @media screen and (min-width: 769px) {
-            ol li {
-                flex-direction: row; /* アイコンを左、テキストを右に配置 */
-                align-items: center; /* 中央揃え */
-                text-align: left; /* 左揃え */
-            }
-            ol li img {
-                margin-bottom: 0; /* アイコン下の余白を削除 */
-                margin-right: 10px; /* アイコンとテキストの間のスペース */
-            }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #0f2b5b 0%, #1a4a8d 100%);
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .btn-primary {
+            background-color: #2563EB;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1E40AF;
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+        }
+        
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-open .accordion-content {
+            max-height: 1000px;
+        }
+        
+        /* Process timeline */
+        .timeline-connector {
+            position: absolute;
+            top: 30px;
+            bottom: 0;
+            left: 18px;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: -1;
+        }
+        
+        /* Custom chart styling */
+        .chart-bar {
+            height: 24px;
+            border-radius: 12px;
+            margin: 8px 0;
+        }
+        
+        .chart-bar-1 {
+            width: 85%;
+            background: linear-gradient(90deg, #3B82F6, #1E40AF);
+        }
+        
+        .chart-bar-2 {
+            width: 65%;
+            background: linear-gradient(90deg, #10B981, #059669);
+        }
+        
+        .chart-bar-3 {
+            width: 92%;
+            background: linear-gradient(90deg, #6366F1, #4F46E5);
         }
     </style>
 </head>
-<body>
-    <div class="wrap">
-        <section class="content">
-            <h2>Global Market Expansion Support – Your Gateway to Success in North America</h2>
+<body class="bg-gray-50">
+  
+    <!-- Hero Section with Dark Overlay for Text Visibility -->
+    <section class="relative bg-gradient-primary py-16 md:py-24">
+        <div class="absolute inset-0 bg-blue-900 opacity-70"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 text-shadow">Transform Your Financial Operations with AI-Powered Accounting</h1>
+                    <p class="text-xl text-white mb-8 text-shadow">
+                        Harness the power of artificial intelligence to streamline your accounting processes, eliminate errors, and gain deeper financial insights.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition">Schedule Demo</a>
+                        <a href="#features" class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-md font-medium transition">Learn More</a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 bg-blue-200 rounded-full opacity-30 absolute -top-10 -right-10"></div>
+                        <div class="w-32 h-32 bg-blue-300 rounded-full opacity-40 absolute bottom-10 -right-10"></div>
+                        <div class="flex flex-col items-end mt-8">
+                            <div class="h-2 w-48 bg-green-400 rounded-full mb-3"></div>
+                            <div class="h-2 w-32 bg-red-400 rounded-full mb-3"></div>
+                            <div class="h-2 w-40 bg-purple-400 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <p><strong>WRAPUP CONSULTING INC.</strong>, headquartered in BC, Canada, specializes in providing comprehensive consulting services to support businesses in expanding their sales channels in the highly competitive markets of the United States and Canada. From initial market research to securing local partnerships and expanding online sales via platforms like Amazon, we assist your company every step of the way.</p>
-            <p>With our extensive expertise, we ensure a smooth and strategic entry into the U.S. and Canadian markets.</p>
-
-            <div class="section-background">
-                <h3 class="highlight">Key Features of Our Service:</h3>
-                <ol>
-                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.04.31-A-simple-clean-icon-for-Market-Research-designed-in-a-flat-modern-style.-The-icon-should-feature-a-magnifying-glass-with-a-bar-chart-inside-the-l-1.webp" alt="Market Research Icon"><strong>Customized Market Research</strong> – In-depth insights into your target market, helping you identify growth opportunities and competitive advantages.</li>
-                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.00-A-simple-clean-icon-for-Strategic-Partnership-designed-in-a-flat-modern-style.-The-icon-should-feature-two-hands-shaking-symbolizing-collaborati.webp" alt="Partnership Icon"><strong>Strategic Partnership Development</strong> – We assist in finding reliable local partners and agents for smooth market entry.</li>
-                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.02-A-simple-clean-icon-for-Regulatory-Compliance-designed-in-a-flat-modern-style.-The-icon-should-feature-a-checkmark-or-a-document-with-a-check-sy.webp" alt="Compliance Icon"><strong>Regulatory Compliance Support</strong> – Ensuring your products meet all U.S. and Canadian regulatory requirements.</li>
-                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.04-A-simple-clean-icon-for-Online-Sales-Platform-Optimization-designed-in-a-flat-modern-style.-The-icon-should-feature-a-shopping-cart-and-upward-ar.webp" alt="Online Sales Icon"><strong>Online Sales Platform Optimization</strong> – Supporting your expansion through Amazon and Shopify, optimizing product listings, sales strategies, and logistics.</li>
-                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.05-A-simple-clean-icon-for-Exhibition-and-Event-Support-designed-in-a-flat-modern-style.-The-icon-should-feature-a-podium-or-stage-with-a-presentati.webp" alt="Event Icon"><strong>Exhibition and Event Support</strong> – Helping you effectively participate in North American trade shows and events, building your brand and network.</li>
-                    <li><img src="https://wrapup.co.jp/wp-content/uploads/2024/10/DALL·E-2024-10-14-12.08.06-A-simple-clean-icon-for-Ongoing-Support-and-Monitoring-designed-in-a-flat-modern-style.-The-icon-should-feature-a-gear-or-cycle-symbol-represent.webp" alt="Monitoring Icon"><strong>Ongoing Support and Monitoring</strong> – Continuous post-launch support and monitoring to ensure long-term growth.</li>
-                </ol>
-            </div>
-
-            <div class="section-background">
-                <h3 class="highlight">Our Proven Track Record</h3>
-                <p>Through our support, companies in various industries have achieved success in the North American market. We have helped businesses in food, electronics, and apparel industries to expand their market presence, securing a strong foothold in the U.S. and Canada.</p>
-                <p>Additionally, we have assisted numerous companies in significantly boosting their online sales through platforms like Amazon and Shopify. For more detailed examples of our success, feel free to contact us.</p>
-            </div>
-
-            <div class="section-background">
-                <h3 class="highlight">Client Testimonials</h3>
-                <div class="testimonial">
-                    <p>"Thanks to WRAPUP CONSULTING, our products successfully entered the U.S. market. From optimizing our online sales to ensuring regulatory compliance, they are a trustworthy partner." - Food Industry Client</p>
+            <div class="text-center mt-16">
+                <p class="text-white text-lg mb-6">Trusted by forward-thinking companies worldwide</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
+                    <div class="flex justify-center">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-circle text-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-th-large text-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-paper-plane text-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-table text-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-th text-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-pen text-white"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p>"The market research and partnership development support were outstanding. Our products penetrated the North American market smoothly, leading to significant sales growth." - Electronics Industry Client</p>
-                </div>
-                <div class="testimonial">
-                    <p>"WRAPUP CONSULTING helped us participate in key trade shows, enabling us to connect with many buyers. We now feel confident in our North American market expansion." - Apparel Industry Client</p>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges and Solutions -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Challenges in Modern Financial Operations</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Traditional accounting methods are struggling to keep pace with today's complex business environment.
+                </p>
             </div>
 
-<div class="section_blue company center">
-      <div class="wrap">
-     <h2 class="txt-lg bottom-lg">Company Profile</h2> 
-        <table class="company__data">
-          <tbody>
-          <tr>
-               <th>Company Name</th>
-            <td>WRAPUP CONSULTING INC.<br class="sp"></td>
-          </tr>
-          <tr>
-               <th>CEO</th>
-            <td>Suguru Abe</td>
-          </tr>
-          <tr>
-               <th>Address</th> 
-                <td>#050 - 3012 Murray St.,Port Moody, BC, Canada</td> 
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-            <a href="#contact" class="btn">Contact Us</a>
-
-            <div class="japanese-link">
-                <p><strong>For details in Japanese:</strong> <a href="https://wrapup.co.jp/northamericajp/">北米市場進出支援サービス（日本語ページ）</a></p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Common Challenges</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-exclamation-triangle text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Manual Data Entry Errors</h4>
+                                <p class="text-gray-600">60% of businesses report significant errors from manual processes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Time-Consuming Reconciliation</h4>
+                                <p class="text-gray-600">Accountants spend 40+ hours monthly on reconciliation tasks</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-line text-red-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Limited Financial Insights</h4>
+                                <p class="text-gray-600">73% of CFOs lack real-time visibility into financial data</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <div class="mb-3">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Error Rate</span>
+                                <span class="text-sm font-medium">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="chart-bar-1"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Time Wasted</span>
+                                <span class="text-sm font-medium">65%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="chart-bar-2"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Compliance Risk</span>
+                                <span class="text-sm font-medium">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="chart-bar-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4">Our AI-Powered Solutions</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Intelligent Data Processing</h4>
+                                <p class="text-gray-600">Reduce errors by 98% with our AI-powered data extraction</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-sync text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Automated Reconciliation</h4>
+                                <p class="text-gray-600">Save 85% of time with intelligent transaction matching</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-pie text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-lg mb-1">Predictive Financial Analytics</h4>
+                                <p class="text-gray-600">Gain actionable insights with AI-driven financial forecasting</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-white rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-lightbulb text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Results Our Clients See</h4>
+                                <p class="text-gray-600 text-sm">Average improvements after implementing WrapUp</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-3xl font-bold text-blue-600">93%</p>
+                                <p class="text-sm text-gray-600">Reduction in Errors</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-blue-600">75%</p>
+                                <p class="text-sm text-gray-600">Time Saved</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-blue-600">42%</p>
+                                <p class="text-sm text-gray-600">Cost Reduction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- Our Strengths -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose WrapUp</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Benefit from our unique combination of technological innovation and industry expertise.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover transition-all">
+                    <div class="w-16 h-16 rounded-full feature-icon flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multilingual Support</h3>
+                    <p class="text-gray-600">Our platform supports over 15 languages, ensuring seamless global operations for international businesses.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover transition-all">
+                    <div class="w-16 h-16 rounded-full feature-icon flex items-center justify-center mb-6">
+                        <i class="fas fa-history text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">55+ Years Experience</h3>
+                    <p class="text-gray-600">Combined industry expertise spanning over five decades, bringing unparalleled accounting knowledge to your business.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover transition-all">
+                    <div class="w-16 h-16 rounded-full feature-icon flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Advanced AI Technology</h3>
+                    <p class="text-gray-600">Proprietary machine learning algorithms process financial data with 98.7% accuracy, minimizing errors and maximizing insights.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover transition-all">
+                    <div class="w-16 h-16 rounded-full feature-icon flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Specialist Team</h3>
+                    <p class="text-gray-600">Dedicated financial experts and technologists working together to deliver exceptional accounting solutions.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="p-8">
+                        <div class="mb-2">
+                            <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Bank-Level Security</h3>
+                        <p class="text-gray-600">256-bit encryption and SOC 2 compliance ensure your financial data remains protected.</p>
+                    </div>
+                    
+                    <div class="p-8 bg-blue-50">
+                        <div class="mb-2">
+                            <i class="fas fa-cogs text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Easy Integration</h3>
+                        <p class="text-gray-600">Seamlessly connect with QuickBooks, Xero, NetSuite, and 20+ other accounting systems.</p>
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="mb-2">
+                            <i class="fas fa-headset text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">24/7 Expert Support</h3>
+                        <p class="text-gray-600">Our dedicated team of accounting specialists is always available to assist you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section id="how-it-works" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Service Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A streamlined approach to transforming your financial operations with AI-powered accounting.
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-100 transform -translate-x-1/2 z-0"></div>
+                
+                <div class="space-y-12 md:space-y-0">
+                    <!-- Step 1 -->
+                    <div class="md:grid md:grid-cols-6 md:gap-8 items-center">
+                        <div class="md:col-span-3 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-semibold text-blue-600 mb-2">Initial Assessment</h3>
+                            <p class="text-gray-600">We evaluate your current financial processes and identify areas for improvement and automation.</p>
+                        </div>
+                        
+                        <div class="md:col-span-3 flex md:justify-start relative">
+                            <div class="z-10 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg">1</div>
+                            <div class="hidden md:block w-24 h-1 bg-blue-100 absolute top-6 right-full"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="md:grid md:grid-cols-6 md:gap-8 items-center mt-12">
+                        <div class="md:col-span-3 flex md:justify-end relative order-first md:order-last">
+                            <div class="z-10 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg">2</div>
+                            <div class="hidden md:block w-24 h-1 bg-blue-100 absolute top-6 left-full"></div>
+                        </div>
+                        
+                        <div class="md:col-span-3 mb-6 md:mb-0">
+                            <h3 class="text-2xl font-semibold text-blue-600 mb-2">Customized Implementation</h3>
+                            <p class="text-gray-600">Our team configures the AI-powered platform to match your specific business requirements and integrates with your existing systems.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="md:grid md:grid-cols-6 md:gap-8 items-center mt-12">
+                        <div class="md:col-span-3 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-semibold text-blue-600 mb-2">Data Migration & Training</h3>
+                            <p class="text-gray-600">We securely transfer your financial data and provide comprehensive training for your team on the new platform.</p>
+                        </div>
+                        
+                        <div class="md:col-span-3 flex md:justify-start relative">
+                            <div class="z-10 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg">3</div>
+                            <div class="hidden md:block w-24 h-1 bg-blue-100 absolute top-6 right-full"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="md:grid md:grid-cols-6 md:gap-8 items-center mt-12">
+                        <div class="md:col-span-3 flex md:justify-end relative order-first md:order-last">
+                            <div class="z-10 w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg">4</div>
+                            <div class="hidden md:block w-24 h-1 bg-blue-100 absolute top-6 left-full"></div>
+                        </div>
+                        
+                        <div class="md:col-span-3 mb-6 md:mb-0">
+                            <h3 class="text-2xl font-semibold text-blue-600 mb-2">Ongoing Support & Optimization</h3>
+                            <p class="text-gray-600">We provide continuous monitoring, regular updates, and proactive support to ensure optimal performance and results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition">Start Your Transformation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founding Team -->
+    <section id="about-us" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Founding Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Industry experts with a passion for transforming financial operations through AI innovation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 mb-6 mx-auto flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600 text-5xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-center">Mayuka Takeichi</h3>
+                        <p class="text-blue-600 mb-4 text-center">Co-Founder & CEO</p>
+                        <p class="text-gray-600 mb-6">
+                            With over 20 years of experience in global finance and technology leadership, Mayuka brings deep expertise in transforming financial operations through innovation. Previously served as CFO at multinational technology firms.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 mb-6 mx-auto flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600 text-5xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-center">Hiroki Kudo</h3>
+                        <p class="text-blue-600 mb-4 text-center">Co-Founder & CTO</p>
+                        <p class="text-gray-600 mb-6">
+                            A pioneering AI researcher and technologist with 15+ years of experience developing machine learning solutions for the financial sector. Hiroki leads our technical innovation and AI strategy to deliver cutting-edge accounting solutions.
+                        </p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                
+                         
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Find answers to common questions about our AI-powered accounting services.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="flex justify-between items-center w-full p-6 text-left" onclick="toggleAccordion(this)">
+                            <span class="text-lg font-semibold">How secure is your AI accounting platform?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">
+                                Security is our top priority. We employ bank-level 256-bit encryption, SOC 2 compliance, and regular security audits. All data is stored in secure, redundant cloud environments with strict access controls. We're compliant with global financial data protection standards including GDPR and maintain a dedicated security team monitoring our systems 24/7.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="flex justify-between items-center w-full p-6 text-left" onclick="toggleAccordion(this)">
+                            <span class="text-lg font-semibold">Can you integrate with my existing accounting software?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">
+                                Yes! Our platform is designed to integrate seamlessly with all major accounting software including QuickBooks, Xero, NetSuite, Sage, FreshBooks, and many more. Our team will handle the entire integration process to ensure a smooth transition without disrupting your current operations.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="flex justify-between items-center w-full p-6 text-left" onclick="toggleAccordion(this)">
+                            <span class="text-lg font-semibold">How accurate is your AI in processing financial data?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">
+                                Our AI system achieves an industry-leading 98.7% accuracy rate in data processing and categorization. All AI-processed transactions are verified through multiple validation layers, and our professional accountants conduct regular reviews to maintain the highest standards of accuracy. Our system also continuously learns from any corrections, improving over time.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="flex justify-between items-center w-full p-6 text-left" onclick="toggleAccordion(this)">
+                            <span class="text-lg font-semibold">How long does implementation take?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">
+                                For most businesses, the implementation process takes 2-4 weeks from initial setup to full deployment. This includes data migration, integration with your existing systems, customization to your specific needs, and comprehensive training. For larger enterprises with complex requirements, the process may take 6-8 weeks to ensure everything is properly configured.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="border border-gray-200 rounded-lg">
+                        <button class="flex justify-between items-center w-full p-6 text-left" onclick="toggleAccordion(this)">
+                            <span class="text-lg font-semibold">Do you support international accounting standards?</span>
+                            <i class="fas fa-chevron-down text-blue-600 transform transition-transform"></i>
+                        </button>
+                        <div class="accordion-content px-6 pb-6">
+                            <p class="text-gray-600">
+                                Yes, our platform supports all major international accounting standards including GAAP, IFRS, and country-specific regulations. We regularly update our system to accommodate changes in international accounting practices and tax laws, ensuring your financial operations remain compliant regardless of where you operate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Accounting?</h2>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Schedule a free consultation with our team to learn how WrapUp's AI-powered accounting solutions can help your business.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-1">Address</h4>
+                                    <p class="text-gray-600">3012 Murray St., Port Moody, BC, Canada</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-1">Phone</h4>
+                                    <p class="text-gray-600">4377390315</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-lg mb-1">Email</h4>
+                                    <p class="text-gray-600">info@wrapup.co.jp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                        
+                        <form>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="company">Company Name</label>
+                                <input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="message">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">WrapUp</h3>
+                    <p class="mb-4">
+                        Transforming financial operations with AI-powered accounting solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-200">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-200">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-200">Bookkeeping</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Financial Analysis</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Tax Preparation</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Payroll Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-200">Blog</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Guides</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Case Studies</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-200">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Careers</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-200">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-400 pt-8 text-center">
+                <p>&copy; 2025 WrapUp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(element) {
+            const parent = element.parentElement;
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (parent.classList.contains('accordion-open')) {
+                parent.classList.remove('accordion-open');
+                icon.classList.remove('rotate-180');
+            } else {
+                parent.classList.add('accordion-open');
+                icon.classList.add('rotate-180');
+            }
+        }
+    </script>
 </body>
 </html>
