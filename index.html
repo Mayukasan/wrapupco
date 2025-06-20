@@ -97,7 +97,30 @@
     </style>
 </head>
 <body class="bg-gray-50">
-  
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600">WrapUp</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Features</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-blue-600 transition">How It Works</a>
+                    <a href="#about-us" class="text-gray-700 hover:text-blue-600 transition">Our Team</a>
+                    <a href="#contact" class="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section with Dark Overlay for Text Visibility -->
     <section class="relative bg-gradient-primary py-16 md:py-24">
         <div class="absolute inset-0 bg-blue-900 opacity-70"></div>
@@ -512,8 +535,230 @@
             </div>
         </div>
     </section>
+
+    <!-- Success Stories -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See how businesses have transformed their financial operations with WrapUp.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-building text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Global Tech Corporation</h4>
+                                <p class="text-sm text-gray-600">Software Development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2">87% Reduction in Processing Time</h3>
+                            <p class="text-gray-600">
+                                Implemented our AI-powered invoice processing system and reduced their monthly close process from 15 days to just 2 days.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="italic text-gray-700">"WrapUp transformed our accounting department from a bottleneck into a strategic asset. The time and cost savings have been remarkable."</p>
+                            <p class="mt-2 text-sm text-gray-600">- Chief Financial Officer</p>
+                        </div>
+                    </div>
+                </div>
                 
-                         
+                <!-- Case Study 2 -->
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-store text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">RetailPlus Group</h4>
+                                <p class="text-sm text-gray-600">Retail Chain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2">$350,000 Annual Cost Savings</h3>
+                            <p class="text-gray-600">
+                                Automated their accounts payable workflows across 120 stores, eliminating manual errors and reducing operational costs.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="italic text-gray-700">"The accuracy and efficiency of WrapUp's AI solution helped us identify cost-saving opportunities we never knew existed."</p>
+                            <p class="mt-2 text-sm text-gray-600">- VP of Finance</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-hospital text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">HealthCare Partners</h4>
+                                <p class="text-sm text-gray-600">Healthcare Provider</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-2">99.8% Accuracy in Compliance</h3>
+                            <p class="text-gray-600">
+                                Leveraged our AI-powered regulatory compliance tools to ensure perfect adherence to healthcare accounting standards.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="italic text-gray-700">"With WrapUp, we've eliminated compliance concerns and gained valuable insights that help us serve our patients better."</p>
+                            <p class="mt-2 text-sm text-gray-600">- Director of Finance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose the plan that works best for your business needs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter Plan -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden pricing-card">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect for small businesses</p>
+                        
+                        <div class="mb-6">
+                            <p class="text-4xl font-bold">$500<span class="text-lg text-gray-600 font-normal">/month</span></p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Basic AI-powered bookkeeping</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Monthly financial statements</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Up to 500 monthly transactions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="block text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition w-full">Get Started</a>
+                    </div>
+                </div>
+                
+                <!-- Business Plan -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden pricing-card transform scale-105 border-2 border-blue-500 z-10">
+                    <div class="bg-blue-600 text-white py-2 px-4 text-center">
+                        <p class="font-medium">Most Popular</p>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Business</h3>
+                        <p class="text-gray-600 mb-6">Ideal for growing companies</p>
+                        
+                        <div class="mb-6">
+                            <p class="text-4xl font-bold">$1,200<span class="text-lg text-gray-600 font-normal">/month</span></p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Advanced AI financial analysis</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Weekly financial reports</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Up to 2,000 monthly transactions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Priority phone & email support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Dedicated accountant</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="block text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition w-full">Get Started</a>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden pricing-card">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-gray-600 mb-6">For large organizations</p>
+                        
+                        <div class="mb-6">
+                            <p class="text-4xl font-bold">Custom<span class="text-lg text-gray-600 font-normal"> pricing</span></p>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Full-suite AI financial management</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Real-time financial dashboards</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Unlimited transactions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>24/7 premium support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Full finance team access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Custom integrations</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="block text-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition w-full">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
